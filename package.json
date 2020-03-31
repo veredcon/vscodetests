@@ -2,7 +2,7 @@
 	"name": "vscode-ext-sample",
 	"displayName": "vscode-ext-sample",
 	"description": "Simple example for VS Code",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "SAP",
 	"repository": "https://github.wdf.sap.corp/I065595/vscodecontextmenu",
 	"engines": {
@@ -31,7 +31,6 @@
 			],
 			"explorer/context": [
 				{
-					"when": "resourceExtname =~ /(xml|json|txt|cds|csn)/",
 					"command": "extension.showDialog",
 					"group": "MyGroup@1"
 				}
