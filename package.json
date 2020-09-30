@@ -18,21 +18,22 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.showDialog",
-				"title": "Show Save Dialog"
+				"command": "extension.showTextEditorTest",
+				"title": "Show Text Editor"
 			}
 		],
 		"menus": {
 			"commandPalette": [
 				{
 					"when": "false",
-					"command": "extension.showDialog"
+					"command": "extension.showTextEditorTest"
 				}
 			],
 			"explorer/context": [
 				{
-					"command": "extension.showDialog",
-					"group": "MyGroup@1"
+					"command": "extension.showTextEditorTest",
+					"group": "MyGroup@1",
+					"when": "resourceFilename =~ /(\\.json|\\.yaml$)/i"
 				}
 			]
 		}
@@ -45,10 +46,12 @@
 		"build": "vsce package"
 	},
 	"devDependencies": {
-		"@types/node": "^8.10.25",
+		"@types/vscode": "latest",
 		"tslint": "^5.16.0",
 		"typescript": "^3.4.5",
-		"@types/vscode": "^1.32.0",
 		"vsce": "^1.61.0"
+	},
+	"dependencies": {
+		"@types/node": "^14.11.2"
 	}
 }
