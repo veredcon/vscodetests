@@ -2,11 +2,11 @@
 	"name": "vscode-ext-sample",
 	"displayName": "vscode-ext-sample",
 	"description": "Simple example for VS Code",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "SAP",
 	"repository": "https://github.wdf.sap.corp/I065595/vscodecontextmenu",
 	"engines": {
-		"vscode": "^1.32.0"
+		"vscode": "^1.49.0"
 	},
 	"categories": [
 		"Other"
@@ -46,12 +46,9 @@
 		"build": "vsce package"
 	},
 	"devDependencies": {
+		"@types/vscode": "^1.49.0",
 		"tslint": "^5.16.0",
 		"typescript": "^3.4.5",
 		"vsce": "^1.61.0"
-	},
-	"dependencies": {
-		"@types/vscode": "latest",
-		"@types/node": "^14.11.2"
 	}
 }

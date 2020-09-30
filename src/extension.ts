@@ -51,16 +51,18 @@ export async function activate(context: vscode.ExtensionContext) {
             // creates the file and save content
             fs.mkdirSync(path.dirname(destFile), {recursive: true});
             fs.writeFileSync(destFile, '{"key": true}');
+			getOutputChannel().appendLine('File was created' + destFile);
 
              let visibleTextEditors = vscode.window.visibleTextEditors;
-            console.log(visibleTextEditors);
+			getOutputChannel().appendLine('number of visibleTextEditors is: ' + visibleTextEditors.length);
 
             const doc = await vscode.workspace.openTextDocument(destFile);
             await showTextDocument(doc);
             visibleTextEditors = vscode.window.visibleTextEditors;
-            console.log(visibleTextEditors);
+            getOutputChannel().appendLine('number of visibleTextEditors after openning newly created file is: ' + visibleTextEditors.length);
         }
         catch (error) {
+            getOutputChannel().appendLine('The following error occured:' + error);
             vscode.window.showErrorMessage(error);
         }
 	});
